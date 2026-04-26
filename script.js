@@ -79,41 +79,39 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileLinks.forEach(link => link.addEventListener("click", toggleMenu));
 
 
-    // ── 4. HERO SLIDER ───────────────────────────
-    const slides = document.querySelectorAll('.hero-slide');
-    const slideDotsContainer = document.getElementById('slideDots');
-    const prevBtn = document.getElementById('slidePrev');
-    const nextBtn = document.getElementById('slideNext');
-    let currentSlide = 0;
-    let slideInterval;
 
-    if (slides.length > 0) {
-        // Create Dots
-        slides.forEach((_, idx) => {
-            const dot = document.createElement('div');
-            dot.className = `slide-dot ${idx === 0 ? 'active' : ''}`;
-            dot.addEventListener('click', () => goToSlide(idx));
-            slideDotsContainer.appendChild(dot);
+
+
+    /* ── 4. HERO AUTO ZOOM SLIDER ───────────────────────────── */
+    const heroLayers = document.querySelectorAll(".hero-layer");
+    let currentHeroLayer = 0;
+
+    if (heroLayers.length > 0) {
+        // Initialize layers
+        heroLayers.forEach((layer, idx) => {
+            layer.style.transition = "opacity 2s ease, transform 6s linear";
+            layer.style.opacity = idx === 0 ? "1" : "0";
+            layer.style.transform = idx === 0 ? "scale(1.08)" : "scale(1)";
         });
-        const dots = document.querySelectorAll('.slide-dot');
 
-        const goToSlide = (idx) => {
-            slides[currentSlide].classList.remove('active');
-            dots[currentSlide].classList.remove('active');
-            currentSlide = (idx + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-            dots[currentSlide].classList.add('active');
-            resetSlideInterval();
-        };
+        setInterval(() => {
+            // Hide current
+            heroLayers[currentHeroLayer].style.opacity = "0";
+            // Reset transform for next time after fade out
+            setTimeout((layerToReset) => {
+                layerToReset.style.transition = "none";
+                layerToReset.style.transform = "scale(1)";
+                // Restore transition
+                setTimeout(() => {
+                    layerToReset.style.transition = "opacity 2s ease, transform 6s linear";
+                }, 50);
+            }, 2000, heroLayers[currentHeroLayer]);
 
-        if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
-        if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
-
-        const resetSlideInterval = () => {
-            clearInterval(slideInterval);
-            slideInterval = setInterval(() => goToSlide(currentSlide + 1), 6000);
-        };
-        resetSlideInterval();
+            // Show next
+            currentHeroLayer = (currentHeroLayer + 1) % heroLayers.length;
+            heroLayers[currentHeroLayer].style.opacity = "1";
+            heroLayers[currentHeroLayer].style.transform = "scale(1.08)";
+        }, 5000);
     }
 
 
@@ -239,6 +237,28 @@ document.addEventListener("DOMContentLoaded", () => {
                 inquiryForm.reset();
             }, 1800);
         });
+    }
+
+    // ── 10. FINAL CTA CINEMATIC REVEAL ───────────
+    const fctRevealWrap = document.querySelector('.fct-reveal-wrap');
+    if (fctRevealWrap) {
+        const fctObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Slight delay to ensure smooth scrolling before heavy animation starts
+                    setTimeout(() => {
+                        fctRevealWrap.classList.add('fct-visible');
+                    }, 150);
+                    // Only trigger once
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            rootMargin: '0px 0px -10% 0px',
+            threshold: 0.15
+        });
+
+        fctObserver.observe(fctRevealWrap);
     }
 
 });

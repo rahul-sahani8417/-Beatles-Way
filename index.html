@@ -28,9 +28,10 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-left">
-                <a href="#hero" class="nav-logo">
-                    <img src="https://dypdvfcjkqkg2.cloudfront.net/large/3079494-7899.png"
-                        alt="Billionaire Travel India" class="logo-img" />
+                <a href="index.html" class="nav-logo" aria-label="Elevated India Home">
+                    <span class="nav-logo-name">Elevated India</span>
+
+                    <span class="nav-logo-tagline">Private Travel House</span>
                 </a>
             </div>
             <div class="nav-center" id="navMenu">
@@ -66,10 +67,79 @@
         </div>
     </div>
 
+
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-layer hero-layer-1"></div>
+            <div class="hero-layer hero-layer-2"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-grain"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-eyebrow reveal-fade">
+                <span class="eyebrow-line"></span>
+                <span>Private Travel House</span>
+                <span class="eyebrow-line"></span>
+            </div>
+            <h1 class="hero-headline">
+                <span class="hero-line reveal-slide" style="--delay: 0.1s">How Billionaires</span>
+                <span class="hero-line reveal-slide" style="--delay: 0.3s">Travel <em
+                        class="highlight-gold">India.</em></span>
+            </h1>
+            <p class="hero-sub reveal-fade" style="--delay: 0.5s">
+                Bespoke journeys crafted with rare access, cultural depth, and uncompromising discretion.
+            </p>
+            <div class="hero-actions reveal-fade" style="--delay: 0.7s">
+                <a href="#inquiry" class="btn btn-primary">
+                    <span>Design My Journey</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+                <a href="#concierge" class="btn btn-ghost-white">
+                    <span>How It Works</span>
+                </a>
+            </div>
+            <div class="hero-stats reveal-fade" style="--delay: 0.9s">
+                <div class="hero-stat">
+                    <span class="stat-num" data-count="50">0</span><span>+</span>
+                    <span class="stat-label">Private Palaces</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="stat-num" data-count="28">0</span>
+                    <span class="stat-label">States Covered</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="stat-num" data-count="15">0</span><span>+</span>
+                    <span class="stat-label">Years of Expertise</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll-indicator">
+            <span class="scroll-text">Discover</span>
+            <div class="scroll-line">
+                <div class="scroll-dot"></div>
+            </div>
+        </div>
+    </section>
+
+
+
     <!-- ─────────────────────────────────────────── -->
     <!--  HERO SECTION                               -->
     <!-- ─────────────────────────────────────────── -->
-    <section class="hero" id="hero">
+
+
+
+
+
+    <!-- <section class="hero" id="hero">
         <div class="hero-slides">
             <div class="hero-slide active" style="background-image:url('image/private_jet.png')">
             </div>
@@ -138,7 +208,7 @@
             <div class="slide-dots" id="slideDots"></div>
             <button class="slide-btn" id="slideNext" aria-label="Next">&#8594;</button>
         </div>
-    </section>
+    </section> -->
 
     <!-- ─────────────────────────────────────────── -->
     <!--  TRUST BAR                                  -->
@@ -1047,20 +1117,63 @@
     <!-- ─────────────────────────────────────────── -->
     <!--  FINAL CTA BANNER                           -->
     <!-- ─────────────────────────────────────────── -->
-    <section class="final-cta">
-        <div class="fct-bg">
-            <img src="image/final_cta_bg.png" alt="India Luxury" loading="lazy" />
-            <div class="fct-overlay"></div>
-        </div>
-        <div class="fct-content reveal-up">
-            <span class="section-eyebrow" style="color:#E8AA9B">Your Journey Awaits</span>
-            <h2>India, <em>Reimagined</em><br>for the Discerning Few.</h2>
-            <p>Not a holiday. Not a package. A singular experience, composed entirely for you.</p>
-            <div class="fct-actions">
-                <a href="#inquiry" class="btn btn-primary btn-lg">Speak to a Travel Curator</a>
-                <a href="#inquiry" class="btn btn-ghost-white">Design My Private Journey</a>
+    <section class="final-cta" id="final-cta">
+        <!-- Zoom reveal wrapper — JS will animate this -->
+        <div class="fct-reveal-wrap">
+
+            <!-- Layered background: image + cinematic overlays -->
+            <div class="fct-bg">
+                <img src="image/final_cta_bg.png" alt="Luxury India — Private Concierge Travel" loading="lazy" />
+                <!-- Base cinematic overlay -->
+                <div class="fct-overlay"></div>
+                <!-- Vignette depth layer -->
+                <div class="fct-vignette"></div>
+                <!-- Subtle grain texture -->
+                <div class="fct-grain"></div>
             </div>
-        </div>
+
+            <!-- Content -->
+            <div class="fct-inner">
+                <!-- Gold rule ornament -->
+                <div class="fct-ornament">
+                    <span class="fct-ornament-line"></span>
+                    <span class="fct-ornament-diamond">◆</span>
+                    <span class="fct-ornament-line"></span>
+                </div>
+
+                <!-- Eyebrow -->
+                <span class="fct-eyebrow">Your Journey Awaits</span>
+
+                <!-- Headline -->
+                <h2 class="fct-headline">
+                    India, <em>Reimagined</em><br>
+                    for the Discerning Few.
+                </h2>
+
+                <!-- Subtext -->
+                <p class="fct-sub">
+                    Not a holiday. Not a package. A singular experience,<br class="fct-br">
+                    composed entirely for you.
+                </p>
+
+                <!-- CTA buttons -->
+                <div class="fct-actions">
+                    <a href="#inquiry" class="fct-btn-primary" id="fctPrimary">
+                        Speak to a Travel Curator
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            aria-hidden="true">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="#inquiry" class="fct-btn-ghost" id="fctGhost">Design My Private Journey</a>
+                </div>
+
+                <!-- Subtle trust line -->
+                <p class="fct-trust">Strictly confidential &nbsp;·&nbsp; Senior curator assigned within 24 hours
+                    &nbsp;·&nbsp; No obligation</p>
+            </div>
+
+        </div><!-- /.fct-reveal-wrap -->
     </section>
 
     <!-- ─────────────────────────────────────────── -->
@@ -1070,8 +1183,12 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <img src="image/Elevated India.png" alt="Billionaire Travel India" class="footer-logo" />
-                    <p class="footer-tagline">A Private Travel Concierge House</p>
+                    <p class="footer-brand-name">Elevated India</p>
+                    <span class="footer-brand-tag">Private Travel House</span>
+
+
+                    <!-- <img src="image/Elevated India.png" alt="Billionaire Travel India" class="footer-logo" /> -->
+                    <!-- <p class="footer-tagline">A Private Travel Concierge House</p> -->
                     <p class="footer-desc">Curating ultra-luxury journeys across India for billionaires, founders, elite
                         families and global high-net-worth clients.</p>
                     <div class="footer-socials">
