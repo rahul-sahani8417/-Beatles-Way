@@ -84,19 +84,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* ── 4. HERO AUTO ZOOM SLIDER ───────────────────────────── */
     const heroLayers = document.querySelectorAll(".hero-layer");
+    const heroImages = [
+        "image/image.png",
+        "image/image1.png",
+        "image/image8.png",
+        "image/beatles-way-final-river.png"
+    ];
     let currentHeroLayer = 0;
+    let currentHeroImage = 0;
 
     if (heroLayers.length > 0) {
         // Initialize layers
         heroLayers.forEach((layer, idx) => {
+            layer.style.backgroundImage = `url("${heroImages[idx % heroImages.length]}")`;
             layer.style.transition = "opacity 2s ease, transform 6s linear";
             layer.style.opacity = idx === 0 ? "1" : "0";
-            layer.style.transform = idx === 0 ? "scale(1.08)" : "scale(1)";
+            layer.style.transform = idx === 0 ? "scale(1.01)" : "scale(1)";
         });
 
         setInterval(() => {
             // Hide current
-            heroLayers[currentHeroLayer].style.opacity = "0";
+            const outgoingLayer = heroLayers[currentHeroLayer];
+            outgoingLayer.style.opacity = "0";
             // Reset transform for next time after fade out
             setTimeout((layerToReset) => {
                 layerToReset.style.transition = "none";
@@ -105,12 +114,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 setTimeout(() => {
                     layerToReset.style.transition = "opacity 2s ease, transform 6s linear";
                 }, 50);
-            }, 2000, heroLayers[currentHeroLayer]);
+            }, 2000, outgoingLayer);
 
             // Show next
             currentHeroLayer = (currentHeroLayer + 1) % heroLayers.length;
-            heroLayers[currentHeroLayer].style.opacity = "1";
-            heroLayers[currentHeroLayer].style.transform = "scale(1.08)";
+            currentHeroImage = (currentHeroImage + 1) % heroImages.length;
+            const incomingLayer = heroLayers[currentHeroLayer];
+            incomingLayer.style.backgroundImage = `url("${heroImages[currentHeroImage]}")`;
+            incomingLayer.style.opacity = "1";
+            incomingLayer.style.transform = "scale(1.01)";
         }, 5000);
     }
 
