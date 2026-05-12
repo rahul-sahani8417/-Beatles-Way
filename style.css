@@ -755,19 +755,15 @@ body:hover .cursor-ring {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(
-      90deg,
+    linear-gradient(90deg,
       rgba(0, 0, 0, 0.55) 0%,
       rgba(0, 0, 0, 0.28) 35%,
       rgba(0, 0, 0, 0.28) 65%,
-      rgba(0, 0, 0, 0.55) 100%
-    ),
-    linear-gradient(
-      180deg,
+      rgba(0, 0, 0, 0.55) 100%),
+    linear-gradient(180deg,
       rgba(0, 0, 0, 0.45) 0%,
       rgba(0, 0, 0, 0.22) 45%,
-      rgba(0, 0, 0, 0.62) 100%
-    );
+      rgba(0, 0, 0, 0.62) 100%);
 
   /* background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 40%, rgba(0, 0, 0, 0.4) 100%); */
 }
@@ -954,7 +950,7 @@ body:hover .cursor-ring {
   gap: 6px;
 }
 
-.hero-stat > .stat-num {
+.hero-stat>.stat-num {
   font-family: var(--font-serif);
   font-size: clamp(28px, 3vw, 42px);
   color: var(--ivory);
@@ -962,7 +958,7 @@ body:hover .cursor-ring {
   line-height: 1;
 }
 
-.hero-stat > .stat-suffix {
+.hero-stat>.stat-suffix {
   color: var(--gold-light);
   font-size: clamp(20px, 2.5vw, 28px);
   margin-top: -2px;
@@ -1439,11 +1435,9 @@ body:hover .cursor-ring {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(229, 110, 68, 0.05) 0%,
-    transparent 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(229, 110, 68, 0.05) 0%,
+      transparent 100%);
   opacity: 0;
   transition: opacity 0.5s;
   pointer-events: none;
@@ -1579,11 +1573,9 @@ body:hover .cursor-ring {
 .av-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(28, 28, 28, 0.5) 100%
-  );
+  background: linear-gradient(180deg,
+      transparent 0%,
+      rgba(28, 28, 28, 0.5) 100%);
 }
 
 .av-content {
@@ -1764,7 +1756,7 @@ body:hover .cursor-ring {
   margin-bottom: 14px;
 }
 
-.pf-content > p {
+.pf-content>p {
   font-size: 0.92rem;
   color: var(--text-muted);
   line-height: 1.7;
@@ -1830,11 +1822,9 @@ body:hover .cursor-ring {
 .pc-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    transparent 40%,
-    rgba(34, 56, 67, 0.75) 100%
-  );
+  background: linear-gradient(180deg,
+      transparent 40%,
+      rgba(34, 56, 67, 0.75) 100%);
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -1889,11 +1879,12 @@ body:hover .cursor-ring {
   direction: rtl;
 }
 
-.exp-item--reverse > * {
+.exp-item--reverse>* {
   direction: ltr;
 }
 
 @media (max-width: 768px) {
+
   .exp-item,
   .exp-item--reverse {
     grid-template-columns: 1fr;
@@ -2022,16 +2013,12 @@ body:hover .cursor-ring {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(
-      ellipse at 20% 50%,
+    radial-gradient(ellipse at 20% 50%,
       rgba(229, 110, 68, 0.06) 0%,
-      transparent 60%
-    ),
-    radial-gradient(
-      ellipse at 80% 50%,
+      transparent 60%),
+    radial-gradient(ellipse at 80% 50%,
       rgba(120, 154, 191, 0.06) 0%,
-      transparent 60%
-    );
+      transparent 60%);
   pointer-events: none;
 }
 
@@ -2050,11 +2037,9 @@ body:hover .cursor-ring {
   top: 20px;
   bottom: 20px;
   width: 1px;
-  background: linear-gradient(
-    180deg,
-    var(--color-cta) 0%,
-    var(--color-blue-soft) 100%
-  );
+  background: linear-gradient(180deg,
+      var(--color-cta) 0%,
+      var(--color-blue-soft) 100%);
 }
 
 .hiw-step {
@@ -2720,11 +2705,9 @@ body:hover .cursor-ring {
 .inq-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(34, 56, 67, 0.55) 0%,
-    rgba(34, 56, 67, 0.35) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(34, 56, 67, 0.55) 0%,
+      rgba(34, 56, 67, 0.35) 100%);
 }
 
 .inquiry .container {
@@ -2983,6 +2966,7 @@ body:hover .cursor-ring {
 }
 
 @keyframes pulse {
+
   0%,
   100% {
     transform: scale(1);
@@ -3029,11 +3013,9 @@ body:hover .cursor-ring {
 .fct-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    162deg,
-    rgb(245 243 242 / 12%) 0%,
-    rgb(9 7 6 / 32%) 100%
-  );
+  background: linear-gradient(162deg,
+      rgb(245 243 242 / 12%) 0%,
+      rgb(9 7 6 / 32%) 100%);
 }
 
 .fct-content {
@@ -3079,6 +3061,33 @@ body:hover .cursor-ring {
 /* ═══════════════════════════════════════════════
    FOOTER
 ═══════════════════════════════════════════════ */
+
+.footer-company {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.footer-company-logo img {
+  height: 20px;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  filter: brightness(1);
+}
+
+.footer-company-logo img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.15);
+}
+
+
 .footer {
   background: #0a0a0a;
   /* background: var(--color-navy-base); */
@@ -3541,23 +3550,19 @@ body:hover .cursor-ring {
 .fct-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    160deg,
-    rgba(10, 8, 6, 0.6) 0%,
-    rgba(18, 14, 10, 0.52) 50%,
-    rgba(10, 8, 6, 0.65) 100%
-  );
+  background: linear-gradient(160deg,
+      rgba(10, 8, 6, 0.6) 0%,
+      rgba(18, 14, 10, 0.52) 50%,
+      rgba(10, 8, 6, 0.65) 100%);
 }
 
 /* ── Vignette for editorial depth ── */
 .fct-vignette {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    ellipse at center,
-    transparent 40%,
-    rgba(5, 3, 2, 0.5) 100%
-  );
+  background: radial-gradient(ellipse at center,
+      transparent 40%,
+      rgba(5, 3, 2, 0.5) 100%);
 }
 
 /* ── Subtle film grain for premium texture ── */
@@ -4074,6 +4079,7 @@ img {
 }
 
 @media (max-width: 900px) {
+
   .section-header,
   .overview-header {
     margin-bottom: 46px;
@@ -4220,7 +4226,7 @@ img {
     gap: 14px;
   }
 
-  .hero-stat > .stat-num,
+  .hero-stat>.stat-num,
   .stat-num {
     font-size: clamp(26px, 8vw, 34px);
   }
@@ -4511,7 +4517,7 @@ img {
     font-size: 0.72rem;
   }
 
-  .hero-stat > .stat-num,
+  .hero-stat>.stat-num,
   .stat-num {
     font-size: 28px;
   }
